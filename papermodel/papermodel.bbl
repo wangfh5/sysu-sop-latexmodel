@@ -1,0 +1,63 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.0 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{shenhan2015}{book}{}
+      \name{author}{1}{}{%
+        {{hash=a4af4f0cb048a0631e3a2b43e1aa70b7}{%
+           family={沈韩},
+           familyi={沈\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {chinese}%
+      }
+      \list{location}{1}{%
+        {北京}%
+      }
+      \list{publisher}{1}{%
+        {科学出版社}%
+      }
+      \strng{namehash}{a4af4f0cb048a0631e3a2b43e1aa70b7}
+      \strng{fullhash}{a4af4f0cb048a0631e3a2b43e1aa70b7}
+      \strng{bibnamehash}{a4af4f0cb048a0631e3a2b43e1aa70b7}
+      \strng{authorbibnamehash}{a4af4f0cb048a0631e3a2b43e1aa70b7}
+      \strng{authornamehash}{a4af4f0cb048a0631e3a2b43e1aa70b7}
+      \strng{authorfullhash}{a4af4f0cb048a0631e3a2b43e1aa70b7}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-7-03-043311-4}
+      \field{langid}{english}
+      \field{month}{2}
+      \field{title}{基础物理实验}
+      \field{usera}{M}
+      \field{userd}{chinese}
+      \field{userf}{chinese}
+      \field{year}{2015}
+      \field{dateera}{ce}
+      \field{pages}{213\bibrangedash 216}
+      \range{pages}{4}
+      \keyw{shenhan2015}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
