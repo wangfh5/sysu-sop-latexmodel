@@ -39,7 +39,7 @@
 	\setCJKfamilyfont{FZHeiTi}{FZHei-B01S}
 	\newcommand{\sectioncf}{\CJKfamily{FZHeiTi}}
 	\titleformat*{\section}{\large\bfseries\sectioncf\sectionef}
-	\titleformat*{\subsection}{\normalsize\bfseries\sectioncf\sectionef}	
+	\titleformat*{\subsection}{\normalsize\bfseries\sectioncf\sectionef}
 
 
 \usepackage{fancyhdr}
@@ -59,7 +59,7 @@
 	%页码:保证在外侧, 奇数页分布在右边，偶数页分布在左边
 	%页眉中间的内容也因奇偶页而不同
 	%实验名称根据实际情况修改
-	\fancypagestyle{maincontent}{  
+	\fancypagestyle{maincontent}{
 		\fancyhf{}  %清空页眉页脚设置
 		\fancyhead[EL, OR]{\thepage}
 		\fancyhead[EC]{实验B12 温度测控仪的设计与组装}
@@ -78,7 +78,7 @@
 		\fancyhead[L]{\the\year 年\the\month 月}
 		\fancyhead[R]{\shortmonthname[\the\month], \the\year}
 		\fancyhead[C]{
-		          \large{基\quad 础\quad 物\quad 理\quad 实\quad 验}\\ 
+		          \large{基\quad 础\quad 物\quad 理\quad 实\quad 验}\\
 		          \normalsize{GENERAL PHYSICS LABORATORY}
 		          }
 	}
@@ -147,7 +147,7 @@
 	\maketitle  %标题和作者
   	\renewcommand{\abstractname} {} %不显示摘要名字
 	\begin{abstract}
-	\vspace{-3em} 
+	\vspace{-3em}
 	%vspace：调整垂直空白，可以自己调整；缩小abstract和center（以及maketitle）的间距
 	%\noindent %备用：摘要无缩进
 	{\bf 摘{} 要：}
@@ -157,7 +157,7 @@
 	\vspace{2em}
 	\end{abstract}
 	\end{@twocolumnfalse}
-]	
+]
 
 %%end-------------------中文摘要-----------------------%%
 
@@ -217,7 +217,7 @@
 	\subsection{实验内容}
 	本实验中笔者选择了“基于LM35电压型温度传感器的数显温度测控仪”电路进行搭建和测试。
 	%%自定义项目符号之（1）（2）（3）
-	\begin{enumerate}[(1)] 
+	\begin{enumerate}[(1)]
 		\item 根据图5搭建电路。
 		\item 测量数字电压读数与温度之间的对应关系， 作电压与温度关系曲线。
 	 	\item 利用组装的温度测控仪电路，将加热阱的温度控制在 75$^{\circ}C$。
@@ -228,7 +228,7 @@
 %%begin------------------插入图表------------------------%%
 
 \section{温度测控仪的搭建和测试}
-	
+
 	\subsection{测试用设备}
 	\paragraph{A.其他设备}~
 	\newline
@@ -252,7 +252,7 @@
 	\caption{基于 PT100（或 Cu50）温度传感器的数显温度测控仪}
 	\label{Diagram_Cu50}
 	\end{figure*}
-	
+
 	\paragraph{B.温度控制设备}~
 	\newline
 
@@ -280,7 +280,7 @@
 		}
 		\caption{温度控制设备}
 	\end{figure*}
-	
+
 \section{实验结果与讨论}
 
 	\subsection{数字电压读数与温度的对应关系}
@@ -373,7 +373,7 @@
 		m=4 \pi a^{3} \rho / 3
 		\end{gather}
 
-	3 需要标号、多个公式、需要对齐		
+	3 需要标号、多个公式、需要对齐
 		\begin{align}
 		a &= b+c+d \\
 		x &= y+z
@@ -446,13 +446,13 @@
 	      \vskip 0.4em%
 	    {\normalsize 1 School of Physics, Sun Yat-sen University, Guangzhou  { \rm 510275}, China}
 	\end{center}
-	\begin{abstract}  
+	\begin{abstract}
 		\vspace{-2em}  %缩小abstract和center（以及maketitle）的间距
-	    	{\bf Abstract：}  
+	    	{\bf Abstract：}
 	     {\small The temperature sensor is made of some metal, semiconductor and other materials with temperature-related characteristics. There are many types of temperature sensors, including metal resistance temperature sentors, thermistor temperature sensors, voltage-type integrated circuit temperature sensors and current-type integrated circuit temperature sensors. In this experiment, by building a temperature measurement and control circuit based on a voltage-type integrated circuit temperature sensor, the basic principles of temperature sensor measurement and control were learned, and the effectiveness of the measurement and control circuit was tested.}
 	  	\par%空的新行的高度。
 		\textbf{Key words}：Temperature sensor, LM35
-	\end{abstract}   
+	\end{abstract}
 \end{@twocolumnfalse}
 ]
 %%end--------------------英文摘要------------------------%%
