@@ -1,4 +1,4 @@
-PWD E:/我的坚果云/Course课程资料/大二上课程/基础物理实验2/论文格式模板
+PWD D:/我的坚果云/Course课程资料/大二上课程/基础物理实验2/latexmodel/sysu-sop-latexmodel/papermodel
 INPUT c:/texlive/2019/texmf.cnf
 INPUT c:/texlive/2019/texmf-dist/web2c/texmf.cnf
 INPUT c:/texlive/2019/texmf-var/web2c/xetex/xelatex.fmt
@@ -105,8 +105,6 @@ INPUT c:/texlive/2019/texmf-dist/tex/generic/oberdiek/ifvtex.sty
 INPUT c:/texlive/2019/texmf-dist/tex/generic/oberdiek/ifvtex.sty
 INPUT c:/texlive/2019/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 INPUT c:/texlive/2019/texmf-dist/tex/generic/ifxetex/ifxetex.sty
-INPUT c:/texlive/2019/texmf-dist/tex/latex/cjk/texinput/CJKnumb.sty
-INPUT c:/texlive/2019/texmf-dist/tex/latex/cjk/texinput/CJKnumb.sty
 INPUT c:/texlive/2019/texmf-dist/tex/latex/amsmath/amsmath.sty
 INPUT c:/texlive/2019/texmf-dist/tex/latex/amsmath/amsmath.sty
 INPUT c:/texlive/2019/texmf-dist/tex/latex/amsmath/amstext.sty

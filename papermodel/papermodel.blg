@@ -1,15 +1,15 @@
 [0] Config.pm:304> INFO - This is Biber 2.12
 [0] Config.pm:307> INFO - Logfile is 'papermodel.blg'
-[29] biber-MSWIN32:315> INFO - === 
-[71] Biber.pm:371> INFO - Reading 'papermodel.bcf'
-[216] Biber.pm:889> INFO - Found 1 citekeys in bib section 0
-[232] Biber.pm:4093> INFO - Processing section 0
-[263] Biber.pm:4254> INFO - Looking for bibtex format file 'book.bib' for section 0
-[267] bibtex.pm:1523> INFO - LaTeX decoding ...
-[275] bibtex.pm:1340> INFO - Found BibTeX data source 'book.bib'
-[353] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[353] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[353] Biber.pm:3921> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
-[353] Biber.pm:3927> INFO - No sort tailoring available for locale 'en-US'
-[356] bbl.pm:636> INFO - Writing 'papermodel.bbl' with encoding 'UTF-8'
-[357] bbl.pm:739> INFO - Output to papermodel.bbl
+[34] biber-MSWIN32:315> INFO - === 
+[78] Biber.pm:371> INFO - Reading 'papermodel.bcf'
+[230] Biber.pm:889> INFO - Found 1 citekeys in bib section 0
+[248] Biber.pm:4093> INFO - Processing section 0
+[262] Biber.pm:4254> INFO - Looking for bibtex format file 'book.bib' for section 0
+[266] bibtex.pm:1523> INFO - LaTeX decoding ...
+[270] bibtex.pm:1340> INFO - Found BibTeX data source 'book.bib'
+[316] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[316] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[324] Biber.pm:3921> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[324] Biber.pm:3927> INFO - No sort tailoring available for locale 'en-US'
+[326] bbl.pm:636> INFO - Writing 'papermodel.bbl' with encoding 'UTF-8'
+[326] bbl.pm:739> INFO - Output to papermodel.bbl

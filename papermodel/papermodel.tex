@@ -1,9 +1,9 @@
-%%中山大学物理学院-基础物理实验-论文格式报告模板
-%%启动整理日期：2020/2/13
+%%中山大学物理学院-基础物理实验-论文格式报告模板1.1
 %%完成整理日期：2020/2/18
-%%中山大学物理学院18届 王佛泓
+%%更新时间：2020/8/25
+%%中山大学物理学院18级 王佛泓
 %%文本编辑器：Sublime Text
-%%平台：win10
+%%平台：win10, Texlive 2019
 
 %---------------------导言区---------------------------%
 \documentclass[10pt,a4paper,twocolumn,twoside,UTF8]{ctexart}
@@ -16,8 +16,8 @@
 	%左右边距一样: 不考虑装订和翻页的需要.实验室网站上的示例论文格式报告就是这样。
 	\geometry{left=2cm,right=2cm,top=2.5cm,bottom=4cm}
 	%实际上,一般需要考虑到双面打印、装订和翻页的需要,需要区分奇偶页。奇偶页的页边距需要分开设置。奇数页左边距较宽，偶数页左边距较窄。
-\usepackage{CJK,CJKnumb,amsmath,paralist,enumerate,booktabs,multirow,graphicx,float,subfig,setspace,listings}
-	%CJK，CJKnumb：更多中文字体（如楷体，作者和机构需要用到）支持
+\usepackage{xeCJK,amsmath,paralist,enumerate,booktabs,multirow,graphicx,float,subfig,setspace,listings}
+	%xeCJK：中文字体（如楷体，作者和机构需要用到）的设置
 	%amsmath：数学公式
 	%paralist，enumerate：自定义项目符号
 	%booktabs：三线图，论文常用的表格风格
@@ -29,12 +29,19 @@
 	%listings:用于排版各种代码；比如matlab的代码
 	\lstset{language=Matlab}%matlab代码
 	%代码环境的使用可以参考完整实验报告模板
+
+\setCJKmainfont{FZShuSong-Z01S}[ItalicFont=FZKai-Z03S, BoldFont=FZHei-B01S]
+%中文字体设置：使用开源字体方正书宋，方正楷体和方正黑体
+
 \usepackage{titlesec}
 	%改变section、subsection里面字体的样式。中文黑体，英文TNR。
 	\newfontfamily\sectionef{Times New Roman}
-	\newCJKfontfamily\sectioncf{SimHei}
+	\setCJKfamilyfont{FZHeiTi}{FZHei-B01S}
+	\newcommand{\sectioncf}{\CJKfamily{FZHeiTi}}
 	\titleformat*{\section}{\large\bfseries\sectioncf\sectionef}
 	\titleformat*{\subsection}{\normalsize\bfseries\sectioncf\sectionef}	
+
+
 \usepackage{fancyhdr}
 	%fancyhdr：一个很强大的宏包，用于自定义设计页面风格并命名以供调用。
 
@@ -117,6 +124,8 @@
 
 
 
+\setCJKfamilyfont{fzyao}{FZYaoTi}                                    %方正姚体  fzy
+\newcommand{\fzyao}{\CJKfamily{fzyao}}
 
 
 
@@ -128,8 +137,8 @@
 
 
 %%begin-------------------中文摘要-----------------------%%
-\title{\LARGE\textbf 实验B12 温度测控仪的设计与组装}
-\author{\large\kaishu 鸭大学子$^{1}$\\ \normalsize\kaishu（1 中山大学 物理学院，广东 广州 510275）}
+\title{\LARGE\textbf{实验B12 温度测控仪的设计与组装}}
+\author{\large\textit{鸭大学子}$^{1}$\\ \normalsize{（1 \textit{中山大学 物理学院，广东 广州 }510275）}}
 \date{}%不显示日期
 
 \twocolumn[
@@ -352,57 +361,66 @@
 \section{结论}
 美国物理学家密立根(Robert a. Millikan)在$1909 \sim 1917$年期间所做的测量微小油滴上所带电荷的工作，即油滴实验，是物理学发展史上一个具有重要意义的实验。这一实验的设计思想简明巧妙、原理清楚、设备简单、结果准确。本实验通过重做密立根的油滴实验，通过“倒过来验证”的方法从实验上验证了电荷分布的不连续性。采用的仪器是专用的密立根油滴实验仪，操作更加方便和清晰。
 
-%%% 1 需要标号、单个公式
-	%一般来说都需要标号
-	\begin{equation}
-	\eta^{\prime}=\eta /[1+b /(p a)]
-	\end{equation}
+	1 需要标号、单个公式
+		%一般来说都需要标号
+		\begin{equation}
+		\eta^{\prime}=\eta /[1+b /(p a)]
+		\end{equation}
 
-%%% 2 需要标号、多个公式、不需要对齐
-	\begin{gather}
-	f_r=6\pi a \eta v_g   \\
-	m=4 \pi a^{3} \rho / 3
-	\end{gather}
+	2 需要标号、多个公式、不需要对齐
+		\begin{gather}
+		f_r=6\pi a \eta v_g   \\
+		m=4 \pi a^{3} \rho / 3
+		\end{gather}
 
-%%% 3 需要标号、多个公式、需要对齐		
-	\begin{align}
-	a &= b+c+d \\
-	x &= y+z
-	\end{align}
+	3 需要标号、多个公式、需要对齐		
+		\begin{align}
+		a &= b+c+d \\
+		x &= y+z
+		\end{align}
 
-%%% 4 不需要标号，单个公式
-	元电荷目前公认的最好结果为:
-	\[e=(1.60217733 \pm 0.00000049) \times 10^{-19} \mathrm{C}\]
-	另一种方法：
-	\begin{equation*}
-	\eta^{\prime}=\eta /[1+b /(p a)]
-	\end{equation*}
+	4 不需要标号，单个公式
+		\[e=(1.60217733 \pm 0.00000049) \times 10^{-19} \mathrm{C}\]
+		另一种方法：
+		\begin{equation*}
+		e=(1.60217733 \pm 0.00000049) \times 10^{-19} \mathrm{C}
+		\end{equation*}
 
-%%% 5 不需要标号，多个公式，不需要对齐/需要对齐
-	%使用对应的*版本
-	\begin{gather*}
-	f_r=6\pi a \eta v_g   \\
-	m=4 \pi a^{3} \rho / 3
-	\end{gather*}
+	5 不需要标号，多个公式，不需要对齐/需要对齐
+		%使用对应的*版本
+		\begin{gather*}
+		f_r=6\pi a \eta v_g   \\
+		m=4 \pi a^{3} \rho / 3
+		\end{gather*}
+		另一种方法：
+		\begin{align*}
+		a &= b+c+d \\
+		x &= y+z
+		\end{align*}
 
-	\begin{align*}
-	a &= b+c+d \\
-	x &= y+z
-	\end{align*}
+	6 长公式，换行，不对齐
+		%不标号的话加上*
+		\begin{multline}
+		x = a+b+c+{} \\
+		d+e+f+g
+		\end{multline}
 
-%%% 6 长公式，换行，不对齐
-	%不标号的话加上*
-	\begin{multline}
-	x = a+b+c+{} \\
-	d+e+f+g
-	\end{multline}
+	7 长公式，换行，对齐
+		%aligned：次环境
+		\[\begin{aligned}
+		x ={}&a+b+c+{} \\
+		&d+e+f+g
+		\end{aligned}\]
 
-%%% 7 长公式，换行，对齐
-	%aligned：次环境
-	\[\begin{aligned}
-	x ={}&a+b+c+{} \\
-	&d+e+f+g
-	\end{aligned}\]
+	8 带有左边大括号的公式
+	\[\left\{
+		\begin{aligned}
+		&C_{1} \cdot \frac{d U_{C_{1}}}{d t}=\frac{1}{R_{1}} \cdot(u_{C_{2}}-u_{C_{1}})-f(u_{R_{N}}) \\
+		&C_{2} \cdot \frac{d U_{C_{2}}}{d t}=i_{L}-\frac{1}{R_{1}} \cdot(u_{C_{2}}-u_{C_{1}}) \\
+		&L \cdot \frac{d i_{L}}{d t}=-U_{C_{2}}
+		\end{aligned}
+	   \right.
+	\]
 
 %%end--------------------插入公式------------------------%%
 
