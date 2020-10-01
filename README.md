@@ -42,7 +42,7 @@ reportmodel：完整实验报告模板
 
 字体文件的常见格式主要有TrueType (TTF)和OpenType (OTF)等格式的，在各大网站下载的都是可以用的，不管是GitHub下载的开源字体，某些官方网站的商业字体，还是在一些聚合站点上下载的字体。比如说我们进入思源宋体的[GitHub下载主页](https://github.com/adobe-fonts/source-han-serif/tree/release)，在下面这里点击下载链接，
 
-![image-20201001151818925](https://github.com/wangfh5/sysu-sop-latexmodel/blob/master/Typora_Picture/README/image-20201001151818925.png)
+<img src="https://github.com/wangfh5/sysu-sop-latexmodel/blob/master/Typora_Picture/README/image-20201001151818925.png" alt="image-20201001151918472" style="zoom: 80%;" />
 
 就会自动下载含有字体文件的压缩包（我点击的是[ExtraLight + Light + Regular + Medium](https://github.com/adobe-fonts/source-han-serif/raw/release/OTF/SourceHanSerifSC_EL-M.zip)），
 
