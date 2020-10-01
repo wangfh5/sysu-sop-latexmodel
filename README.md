@@ -36,6 +36,8 @@ reportmodel：完整实验报告模板
 
 ## 中文字体的设置
 
+> 原文：[Win10环境下LaTeX中文字体的设置 - 知乎](https://zhuanlan.zhihu.com/p/260989874)
+
 在这里给出**Windows10**环境下，设置中文字体的一个相对比较完整的流程，以[思源宋体](https://github.com/adobe-fonts/source-han-serif)的安装和使用为例。
 
 ### 字体的下载
