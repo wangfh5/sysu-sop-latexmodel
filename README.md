@@ -27,7 +27,7 @@ reportmodel：完整实验报告模板
 
 安装完Tex Live或者MacTex之后，会自带一个编辑和编译器TeXworks，可以在入门的时候使用，进行简单的学习，但是在实际使用上很不方便。目前比较时髦的配置环境是用微软的 VS Code + 插件 LaTeX Workshop使用，配置十分方便，比笔者之前用的“Sublime Text+Sumatra PDF+Ghostscript+ImageMagick”方便得多，且具体使用起来更加舒服。
 
-![image-20201001150413270](http://github.com/wangfh5/sysu-sop-latexmodel/blob/master/Typora_Picture/README/image-20201001150413270.png)
+![image-20201001150413270](https://github.com/wangfh5/sysu-sop-latexmodel/blob/master/Typora_Picture/README/image-20201001150413270.png)
 
 > 配置教程可以参考近期LaTeX工作室的一个直播教程：
 >
@@ -42,15 +42,15 @@ reportmodel：完整实验报告模板
 
 字体文件的常见格式主要有TrueType (TTF)和OpenType (OTF)等格式的，在各大网站下载的都是可以用的，不管是GitHub下载的开源字体，某些官方网站的商业字体，还是在一些聚合站点上下载的字体。比如说我们进入思源宋体的[GitHub下载主页](https://github.com/adobe-fonts/source-han-serif/tree/release)，在下面这里点击下载链接，
 
-![image-20201001151818925](http://github.com/wangfh5/sysu-sop-latexmodel/blob/master/Typora_Picture/README/image-20201001151818925.png)
+![image-20201001151818925](https://github.com/wangfh5/sysu-sop-latexmodel/blob/master/Typora_Picture/README/image-20201001151818925.png)
 
 就会自动下载含有字体文件的压缩包（我点击的是[ExtraLight + Light + Regular + Medium](https://github.com/adobe-fonts/source-han-serif/raw/release/OTF/SourceHanSerifSC_EL-M.zip)），
 
-<img src="http://github.com/wangfh5/sysu-sop-latexmodel/blob/master/Typora_Picture/README/image-20201001151918472.png" alt="image-20201001151918472" style="zoom: 80%;" />
+<img src="https://github.com/wangfh5/sysu-sop-latexmodel/blob/master/Typora_Picture/README/image-20201001151918472.png" alt="image-20201001151918472" style="zoom: 80%;" />
 
 解压后可以看到一些OTF文件，这就是我们要用的文件，如果你手头上有这样的文件，可以直接拿来用。
 
-![image-20201001152004526](http://github.com/wangfh5/sysu-sop-latexmodel/blob/master/Typora_Picture/README/image-20201001152004526.png)
+![image-20201001152004526](https://github.com/wangfh5/sysu-sop-latexmodel/blob/master/Typora_Picture/README/image-20201001152004526.png)
 
 安装字体的方式很简单，右键安装即可；但是需要注意的是，一定要点击“为所有用户安装”
 
@@ -62,17 +62,17 @@ reportmodel：完整实验报告模板
 
 Windows 10的设置中可以查看自己安装的字体，这个面板可以在设置中进行搜索进入
 
-<img src="http://github.com/wangfh5/sysu-sop-latexmodel/blob/master/Typora_Picture/README/image-20201001152441720.png" alt="image-20201001152441720" style="zoom:67%;" />
+<img src="https://github.com/wangfh5/sysu-sop-latexmodel/blob/master/Typora_Picture/README/image-20201001152441720.png" alt="image-20201001152441720" style="zoom:67%;" />
 
 安装成功之后，在“字体设置”页面中搜索应该可以看到这个字体。
 
-<img src="http://github.com/wangfh5/sysu-sop-latexmodel/blob/master/Typora_Picture/README/image-20201001152556619.png" alt="image-20201001152556619" style="zoom:67%;" />
+<img src="https://github.com/wangfh5/sysu-sop-latexmodel/blob/master/Typora_Picture/README/image-20201001152556619.png" alt="image-20201001152556619" style="zoom:67%;" />
 
 > 注意，如果通过将字体文件拖放到“字体设置”页面的“添加字体”那个虚线方框中进行字体的安装，并不是为所有用户安装的，不能成功被LaTeX调用。
 
 对于思源宋体这种字体，它是含有多种粗细型号的，都可以在这个面板进行预览和查看。
 
-<img src="http://github.com/wangfh5/sysu-sop-latexmodel/blob/master/Typora_Picture/README/image-20201001153724376.png" alt="image-20201001153724376" style="zoom:67%;" />
+<img src="https://github.com/wangfh5/sysu-sop-latexmodel/blob/master/Typora_Picture/README/image-20201001153724376.png" alt="image-20201001153724376" style="zoom:67%;" />
 
 ### 查看安装的字体及其代号
 
@@ -84,7 +84,7 @@ fc-list -f "%{family}\n" :lang=zh >d:zhfont.txt
 
 系统就会输出一个文件`zhfont.txt`，放在D盘中（当然你可以自己修改路径，更多的信息可以搜索了解）。打开这个文件之后，你就会看到系统中安装的所有中文字体及其代号，都可以在LaTeX中随意调用，当然也包括我们刚刚安装的“思源宋体”，
 
-![image-20201001153748087](http://github.com/wangfh5/sysu-sop-latexmodel/blob/master/Typora_Picture/README/image-20201001153748087.png)
+![image-20201001153748087](https://github.com/wangfh5/sysu-sop-latexmodel/blob/master/Typora_Picture/README/image-20201001153748087.png)
 
 所有用逗号`,`隔开的短语，如`Source Han Serif SC`，`思源宋体`，`Source Han Serif SC Medium`，`思源宋体 Medium`，都可以作为后面调用的代号，其中后两者代表“Medium”这个粗细，而前两者实际上代表的是这个字体的默认粗细，即“Regular”，想要调用非默认粗细的话需要注意代号。
 
@@ -124,7 +124,7 @@ fc-cache -fsv
 我们对\LaTeX 中\textbf{中文字体}的\textit{设置}进行介绍。
 ```
 
-<img src="http://github.com/wangfh5/sysu-sop-latexmodel/blob/master/Typora_Picture/README/image-20201001161913855.png" alt="image-20201001161913855" style="zoom:50%;" />
+<img src="https://github.com/wangfh5/sysu-sop-latexmodel/blob/master/Typora_Picture/README/image-20201001161913855.png" alt="image-20201001161913855" style="zoom:50%;" />
 
 #### 2. 临时调用某个字体
 
@@ -155,7 +155,7 @@ fc-cache -fsv
 
 可能有的读者注意到，第一行用的是`\renewcommand`而不是`\newcommand`。这是因为，如果我们引用了`ctex`宏包或者文档类型用的是`ctexart`，我们可以直接用`ctex`宏包自带的字体：
 
-<img src="http://github.com/wangfh5/sysu-sop-latexmodel/blob/master/Typora_Picture/README/image-20201001161128142.png" alt="image-20201001161128142" style="zoom:50%;" />
+<img src="https://github.com/wangfh5/sysu-sop-latexmodel/blob/master/Typora_Picture/README/image-20201001161128142.png" alt="image-20201001161128142" style="zoom:50%;" />
 
 比如说临时调用隶书这个字体，
 
@@ -192,7 +192,7 @@ fc-cache -fsv
 \end{document}
 ```
 
-![image-20201001162918360](http://github.com/wangfh5/sysu-sop-latexmodel/blob/master/Typora_Picture/README/image-20201001162918360.png)
+![image-20201001162918360](https://github.com/wangfh5/sysu-sop-latexmodel/blob/master/Typora_Picture/README/image-20201001162918360.png)
 
 ## 其他常用的工具
 
@@ -200,10 +200,10 @@ fc-cache -fsv
 
 在LaTeX中制作表格是一件很麻烦的事情，好在我们有一些拓展宏可以实现将excel中的表格转化为代码。在这里我们推荐加载项`Excel2LaTeX`，其官网为[CTAN: Package Excel2LaTeX](https://www.ctan.org/pkg/excel2latex)，下载之后双击就安装到excel里面了
 
-![image-20201001163657343](http://github.com/wangfh5/sysu-sop-latexmodel/blob/master/Typora_Picture/README/image-20201001163657343.png)
+![image-20201001163657343](https://github.com/wangfh5/sysu-sop-latexmodel/blob/master/Typora_Picture/README/image-20201001163657343.png)
 
 选中你想转化为代码的表格之后，点选`Convert Table to LaTeX`即可秒速转换为代码，在里面有一些配置，我一般设置如下，
 
-![image-20201001163856974](http://github.com/wangfh5/sysu-sop-latexmodel/blob/master/Typora_Picture/README/image-20201001163856974.png)
+![image-20201001163856974](https://github.com/wangfh5/sysu-sop-latexmodel/blob/master/Typora_Picture/README/image-20201001163856974.png)
 
 其中`Booktabs package`是制作三线表的选项，一般都使用这个，但是你的边框线要自己画好，使用三线表也需要引用宏包`booktabs`。
