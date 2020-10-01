@@ -27,7 +27,7 @@ reportmodel：完整实验报告模板
 
 安装完Tex Live或者MacTex之后，会自带一个编辑和编译器TeXworks，可以在入门的时候使用，进行简单的学习，但是在实际使用上很不方便。目前比较时髦的配置环境是用微软的 VS Code + 插件 LaTeX Workshop使用，配置十分方便，比笔者之前用的“Sublime Text+Sumatra PDF+Ghostscript+ImageMagick”方便得多，且具体使用起来更加舒服。
 
-![image-20201001150413270](http://wangfohong-image.oss-cn-shenzhen.aliyuncs.com/img/image-20201001150413270.png)
+![image-20201001150413270](http://github.com/wangfh5/sysu-sop-latexmodel/blob/master/Typora_Picture/README/image-20201001150413270.png)
 
 > 配置教程可以参考近期LaTeX工作室的一个直播教程：
 >
