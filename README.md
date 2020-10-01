@@ -72,7 +72,7 @@ Windows 10的设置中可以查看自己安装的字体，这个面板可以在�
 
 对于思源宋体这种字体，它是含有多种粗细型号的，都可以在这个面板进行预览和查看。
 
-<img src="Typora_Picture/README/image-20201001153724376.png" alt="image-20201001153724376" style="zoom:67%;" />
+<img src="http://wangfohong-image.oss-cn-shenzhen.aliyuncs.com/img/image-20201001153724376.png" alt="image-20201001153724376" style="zoom:67%;" />
 
 ### 查看安装的字体及其代号
 
@@ -200,10 +200,10 @@ fc-cache -fsv
 
 在LaTeX中制作表格是一件很麻烦的事情，好在我们有一些拓展宏可以实现将excel中的表格转化为代码。在这里我们推荐加载项`Excel2LaTeX`，其官网为[CTAN: Package Excel2LaTeX](https://www.ctan.org/pkg/excel2latex)，下载之后双击就安装到excel里面了
 
-![image-20201001163657343](Typora_Picture/README/image-20201001163657343.png)
+![image-20201001163657343](http://wangfohong-image.oss-cn-shenzhen.aliyuncs.com/img/image-20201001163657343.png)
 
 选中你想转化为代码的表格之后，点选`Convert Table to LaTeX`即可秒速转换为代码，在里面有一些配置，我一般设置如下，
 
-![image-20201001163856974](Typora_Picture/README/image-20201001163856974.png)
+![image-20201001163856974](http://wangfohong-image.oss-cn-shenzhen.aliyuncs.com/img/image-20201001163856974.png)
 
 其中`Booktabs package`是制作三线表的选项，一般都使用这个，但是你的边框线要自己画好，使用三线表也需要引用宏包`booktabs`。
