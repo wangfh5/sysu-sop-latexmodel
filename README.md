@@ -1,4 +1,4 @@
-# 中山大学物理学院实验报告LaTeX模板
+# 中山大学物理学院基础物理实验报告LaTeX模板
 
 papermodel：论文格式报告模板  
 reportmodel：完整实验报告模板
@@ -179,12 +179,12 @@ fc-cache -fsv
     我们对\LaTeX 中\textbf{中文字体}的\textit{设置}进行介绍。\\
     {\lishu 下面}是ctex宏包中自带的字体，可以直接使用；相应得，我们在自定义字体的时候，{\fzkaiti 不能}和这些字体的命令重名。\\
    \begin{tabular}{|lll|}
-        \hline 
+        \hline
         \songti 宋体    & SimSun          &\verb|\songti 宋体|   \\
         \kaishu 楷体    & KaiTi           &\verb|\kaishu 楷体|   \\
         \heiti 黑体     & SimHei          &\verb|\heiti 黑体|    \\
         \yahei 微软雅黑  & Microsoft YaHei &\verb|\yahei 微软雅黑| \\
-        \fangsong 仿宋  & FangSong        &\verb|\fangsong 仿宋| \\ 
+        \fangsong 仿宋  & FangSong        &\verb|\fangsong 仿宋| \\
         \youyuan 幼圆   & YouYuan         &\verb|\youyuan 幼圆|  \\
         \lishu 隶书     & LiSu            &\verb|\lishu 隶书|    \\
         \hline 	
