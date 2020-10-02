@@ -108,7 +108,7 @@ fc-cache -fsv
 
 #### 1. 设置主要文字
 
-首先是对整篇文档主要文字的设置，包括默认字体、加粗字体和斜体字体，
+首先是对整篇文档主要文字的设置，包括默认字体、加粗字体和斜体字体，在导言区中加入：
 
 ```tex
 \setCJKmainfont[ItalicFont=方正楷体简体,BoldFont=FZHei-B01S]{Source Han Serif SC}
@@ -130,7 +130,7 @@ fc-cache -fsv
 
 #### 2. 临时调用某个字体
 
-另外一个常用的命令是临时调用某个字体`\CJKfintspec`：
+另外一个常用的命令是临时调用某个字体`\CJKfintspec`，可以在正文中直接使用，
 
 ```tex
 {\CJKfontspec{方正楷体简体} 实验时间：2020年9月21日~星期一~下午}
