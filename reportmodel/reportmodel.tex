@@ -1,4 +1,4 @@
-%%中山大学物理学院-基础物理实验-完整实验报告模板1.1
+%%%中山大学物理学院-基础物理实验-完整实验报告模板1.1
 %%完成整理日期：2020/2/18
 %%更新时间：2020/10/14
 %%中山大学物理学院18级 王佛泓
@@ -7,13 +7,13 @@
 
 
 %---------------------导言区---------------------------%
-\documentclass[12pt,a4paper,UTF8]{ctexart}
+\documentclass[12pt,a4paper,UTF8]{article}
 	%10pt：正文字体为12pt，缺省为10pt；各层级字体大小会根据正文字体自动调整
 	%a4paper：纸张大小a4；
 	%UTF8：中文要求
 \usepackage{geometry}%用于设置上下左右页边距
 	\geometry{left=2.5cm,right=2.5cm,top=3.2cm,bottom=2.8cm}
-\usepackage{xeCJK,amsmath,paralist,enumerate,booktabs,multirow,graphicx,float,subfigure,setspace,listings,lastpage,hyperref}
+\usepackage{xeCJK,amsmath,paralist,enumerate,booktabs,multirow,graphicx,float,subfigure,listings,lastpage,hyperref}
 	%xeCJK：中文字体（如楷体，作者和机构需要用到）的设置
 	%amsmath：数学公式
 	%paralist，enumerate：自定义项目符号
@@ -21,8 +21,6 @@
 	%multirow：复杂表格
 	%graphicx，float: 插入图片
 	%subfigure：并排排版图片、竖向排版图片
-	%setspace：设置行间距等功能
-	\setlength{\parindent}{2em}%正文首行缩进两个汉字
 	%listings:用于排版各种代码；比如matlab的代码
 	\lstset{language=Matlab}%matlab代码
 	%lastpage:获取总页数;
@@ -38,9 +36,18 @@
 	\renewcommand{\headrulewidth}{0.4pt}
 	\renewcommand{\theenumi}{(\arabic{enumi})}
 
+%%begin-------------------中文相关设置-----------------------%%
 \setCJKmainfont{FZShuSong-Z01S}[ItalicFont=FZKai-Z03S, BoldFont=FZHei-B01S]
 %中文字体设置：使用开源字体方正书宋，方正楷体和方正黑体
-
+\renewcommand{\figurename}{图}%将fig改成图
+\renewcommand{\tablename}{表}%将tab改成表
+\usepackage{indentfirst}%latex默认每个章节的第一段都不缩进，不符合中文习惯
+	\setlength{\parindent}{2em}
+\usepackage{setspace}%setspace：设置行间距等功能
+	\setlength{\parindent}{2em}%正文首行缩进两个汉字
+	\renewcommand{\baselinestretch}{1.3}%设置行间距
+	% \setlength{\parskip}{1.0ex}
+%%end---------------------中文相关设置-----------------------%%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -101,9 +108,10 @@
 \subsection*{【实验原理】}
 
 	\subsubsection*{1.vLight 光学系统虚拟仿真实验平台简介}
-%% 自然换段：\par
+%% 自然换段：\par，或者两段文字之间空一行
 	vLight 光学系统虚拟仿真实验平台是由中山大学物理学院，中国科学院软件所和国防科技大学光电科学与工程学院共同研发。\par
-	vLight基于物理原理的数字化仿真方法，通过对光源物理特征、干涉、 衍射、偏振等方面进行虚拟仿真实验的研究，从物理、数学层面进行可视化仿真，为光学系统的建模和仿真提供了极大的准确性和灵活性。 \par
+	vLight基于物理原理的数字化仿真方法，通过对光源物理特征、干涉、 衍射、偏振等方面进行虚拟仿真实验的研究，从物理、数学层面进行可视化仿真，为光学系统的建模和仿真提供了极大的准确性和灵活性。
+	
 	vLight 提供 7 大类、 72 个成熟的光学模型，涵盖光源、光束传输、器件等多个种类，满足不同教学场景的仿真模拟需要；内置的应用实例库囊括了光学基础教学的大部分内容，包含几何光学、波动光学（衍射）、波动光学（干涉）、光的偏振、信息光学、常用光学仪器等7大类共52个应用实例。\par
 	依托云计算、并行计算等流行技术，为vLight虚拟仿真实验构建了稳定、高效的云服务平台，用户不需要下载任何插件，打开浏览器即可使用。
 
