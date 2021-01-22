@@ -1,6 +1,6 @@
-%%中山大学物理学院-基础物理实验-完整实验报告模板1.1
+%%中山大学物理学院-基础物理实验-完整实验报告模板1.2
 %%完成整理日期：2020/2/18
-%%更新时间：2020/10/14
+%%更新时间：2021/1/22
 %%中山大学物理学院18级 王佛泓
 %%平台：win10, Texlive 2019
 %%编译方式：xelatex
@@ -101,10 +101,12 @@
 \subsection*{【实验原理】}
 
 	\subsubsection*{1.vLight 光学系统虚拟仿真实验平台简介}
-%% 自然换段：\par
+%% 自然换段：\par，或者直接空一行，见107行和109行。
 	vLight 光学系统虚拟仿真实验平台是由中山大学物理学院，中国科学院软件所和国防科技大学光电科学与工程学院共同研发。\par
-	vLight基于物理原理的数字化仿真方法，通过对光源物理特征、干涉、 衍射、偏振等方面进行虚拟仿真实验的研究，从物理、数学层面进行可视化仿真，为光学系统的建模和仿真提供了极大的准确性和灵活性。 \par
-	vLight 提供 7 大类、 72 个成熟的光学模型，涵盖光源、光束传输、器件等多个种类，满足不同教学场景的仿真模拟需要；内置的应用实例库囊括了光学基础教学的大部分内容，包含几何光学、波动光学（衍射）、波动光学（干涉）、光的偏振、信息光学、常用光学仪器等7大类共52个应用实例。\par
+	vLight基于物理原理的数字化仿真方法，通过对光源物理特征、干涉、 衍射、偏振等方面进行虚拟仿真实验的研究，从物理、数学层面进行可视化仿真，为光学系统的建模和仿真提供了极大的准确性和灵活性。 
+
+	vLight 提供 7 大类、 72 个成熟的光学模型，涵盖光源、光束传输、器件等多个种类，满足不同教学场景的仿真模拟需要；内置的应用实例库囊括了光学基础教学的大部分内容，包含几何光学、波动光学（衍射）、波动光学（干涉）、光的偏振、信息光学、常用光学仪器等7大类共52个应用实例。
+
 	依托云计算、并行计算等流行技术，为vLight虚拟仿真实验构建了稳定、高效的云服务平台，用户不需要下载任何插件，打开浏览器即可使用。
 
 
@@ -195,18 +197,18 @@
 
 %% 两幅图并行排版，各有图题，还有一个总的图题
 	% （1）注意正文中引用图片的方法，label可以打在minipage前面，也可以打在总图题的后面。
-	% （2）需要调节图片大小，也可以调节位置。通过{minipage}后面的补充参数来调节位置。图片大小可以用高度来调以保证两个图高度一样。 
+	% （2）需要调节图片大小，也可以调节位置。通过{minipage}后面的补充参数来调节位置。图片大小可以用高度来调以保证两个图高度一样。
 	\begin{figure}[htbp]
 		\centering
 		\subfigure[不加$\lambda/4$波片]{\label{fig:nogamma4}
-		\begin{minipage}[t]{0.5\linewidth}%调节这里的minipage大小，同时也是在调节左右两张图的相对位置
+		\begin{minipage}[t]{0.5\linewidth}%调节这里的图片位置
 		\centering
 		\includegraphics[width=0.8\textwidth]{img/3_1.png}%调节这里的图片宽度
 		%\caption{fig1}
 		\end{minipage}%
 		}%
 		\subfigure[加$\lambda/4$波片]{\label{fig:withgamma4}
-		\begin{minipage}[t]{0.5\linewidth}%调节这里的minipage大小，同时也是在调节左右两张图的相对位置
+		\begin{minipage}[t]{0.5\linewidth}%调节这里的图片位置
 		\centering
 		\includegraphics[width=0.8\textwidth]{img/3_2.png}%调节这里的图片宽度
 		%\caption{fig2}
@@ -222,14 +224,14 @@
 	\begin{figure}
 		\centering
 		\subfigure[纵向调制]{
-		\begin{minipage}[b]{0.5\textwidth}%调节这里的minipage大小
+		\begin{minipage}[b]{0.5\textwidth}%调节这里的图片位置
 			\centering
 			\includegraphics[width=1\textwidth]{img/v.png}%调节这里的图片宽度
 		\end{minipage}
 		}
 
 		\subfigure[横向调制]{
-		\begin{minipage}[b]{0.5\textwidth}%调节这里的minipage大小
+		\begin{minipage}[b]{0.5\textwidth}%调节这里的图片位置
 			\centering
 			\includegraphics[width=1\textwidth]{img/h.png}%调节这里的图片宽度
 		\end{minipage}
@@ -264,59 +266,64 @@
 %%%%%%%%%%%%%%%插入公式%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
-	1 需要标号、单个公式
-		%一般来说都需要标号
+\paragraph*{公式的插入}
+	\paragraph*{1. equation环境}默认有标号，用于单个公式。
+		%一般来说都需要标号，不用标号只需要在环境中加上*，见下。
 		\begin{equation}
 		\eta^{\prime}=\eta /[1+b /(p a)]
 		\end{equation}
+		如果不用标号，只需在equation后面加上*，
+		\begin{equation}
+			\eta^{\prime}=\eta /[1+b /(p a)]
+		\end{equation}
+		这其实相当于直接使用$\backslash[\backslash]$进行公式编辑。
+		\[e=(1.60217733 \pm 0.00000049) \times 10^{-19} \mathrm{C}\]
 
-	2 需要标号、多个公式、不需要对齐
+	\paragraph*{2. gather环境}默认有自动标号，用于多行公式排版，没有对齐功能。
 		\begin{gather}
 		f_r=6\pi a \eta v_g   \\
 		m=4 \pi a^{3} \rho / 3
 		\end{gather}
+		如果不用标号，只需在gather后面加上*。
+		\begin{gather*}
+			f_r=6\pi a \eta v_g   \\
+			m=4 \pi a^{3} \rho / 3
+		\end{gather*}
 
-	3 需要标号、多个公式、需要对齐
+	\paragraph*{3. align环境和aligned次环境}
 		\begin{align}
 		a &= b+c+d \\
 		x &= y+z
 		\end{align}
-
-	4 不需要标号，单个公式
-		\[e=(1.60217733 \pm 0.00000049) \times 10^{-19} \mathrm{C}\]
-		另一种方法：
-		\begin{equation*}
-		e=(1.60217733 \pm 0.00000049) \times 10^{-19} \mathrm{C}
-		\end{equation*}
-
-	5 不需要标号，多个公式，不需要对齐/需要对齐
-		%使用对应的*版本
-		\begin{gather*}
-		f_r=6\pi a \eta v_g   \\
-		m=4 \pi a^{3} \rho / 3
-		\end{gather*}
-		另一种方法：
+		等价的用法是equation环境加上aligned次环境，
+		\begin{equation}
+			\begin{aligned}
+			a &= b+c+d \\
+			x &= y+z
+			\end{aligned}
+		\end{equation}
+		如果不用标号，只需在align后面加上*，
 		\begin{align*}
-		a &= b+c+d \\
-		x &= y+z
+			a &= b+c+d \\
+			x &= y+z
 		\end{align*}
+		等价的用法是equation环境加上aligned次环境，在equation后面加上*。
+		\begin{equation}
+			\begin{aligned}
+			a &= b+c+d \\
+			x &= y+z
+			\end{aligned}
+		\end{equation}
 
-	6 长公式，换行，不对齐
+	\paragraph*{4. multiline环境}可用于单条长公式排版，换行但不对齐，默认有自动标号，不标号只需加上*。
 		%不标号的话加上*
 		\begin{multline}
 		x = a+b+c+{} \\
 		d+e+f+g
 		\end{multline}
 
-	7 长公式，换行，对齐
-		%aligned：次环境
-		\[\begin{aligned}
-		x ={}&a+b+c+{} \\
-		&d+e+f+g
-		\end{aligned}\]
-
-	8 带有左边大括号的公式
-	\[\left\{
+	\paragraph*{5. 带有左边大括号的公式}
+	\[\left\{%\left和\right配合使用，可以得到大小匹配的各种括号
 		\begin{aligned}
 		&C_{1} \cdot \frac{d U_{C_{1}}}{d t}=\frac{1}{R_{1}} \cdot(u_{C_{2}}-u_{C_{1}})-f(u_{R_{N}}) \\
 		&C_{2} \cdot \frac{d U_{C_{2}}}{d t}=i_{L}-\frac{1}{R_{1}} \cdot(u_{C_{2}}-u_{C_{1}}) \\
@@ -324,6 +331,7 @@
 		\end{aligned}
 	   \right.
 	\]
+
 
 
 \subsection*{【思考题】}

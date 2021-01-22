@@ -1,6 +1,6 @@
-%%中山大学物理学院-基础物理实验-论文格式报告模板1.1
+%%中山大学物理学院-基础物理实验-论文格式报告模板1.2
 %%完成整理日期：2020/2/18
-%%更新时间：2020/8/25
+%%更新时间：2021/1/22
 %%中山大学物理学院18级 王佛泓
 %%平台：win10, Texlive 2019
 %%编译方式：xelatex
@@ -14,7 +14,7 @@
 	%UTF8：中文要求
 \usepackage{geometry}%用于设置上下左右页边距
 	%左右边距一样: 不考虑装订和翻页的需要.实验室网站上的示例论文格式报告就是这样。
-	\geometry{left=2cm,right=2cm,top=2.5cm,bottom=4cm}
+	\geometry{left=2cm,right=2cm,top=2.5cm,bottom=3cm}
 	%实际上,一般需要考虑到双面打印、装订和翻页的需要,需要区分奇偶页。奇偶页的页边距需要分开设置。奇数页左边距较宽，偶数页左边距较窄。
 \usepackage{xeCJK,amsmath,paralist,enumerate,booktabs,multirow,graphicx,float,subfig,setspace,listings}
 	%xeCJK：中文字体（如楷体，作者和机构需要用到）的设置
@@ -27,8 +27,7 @@
 	%setspace：设置行间距等功能
 	\setlength{\parindent}{2em}%正文首行缩进两个汉字
 	%listings:用于排版各种代码；比如matlab的代码
-	\lstset{language=Matlab}%matlab代码
-	%代码环境的使用可以参考完整实验报告模板
+	\lstset{language=tex}
 
 \setCJKmainfont{FZShuSong-Z01S}[ItalicFont=FZKai-Z03S, BoldFont=FZHei-B01S]
 %中文字体设置：使用开源字体方正书宋，方正楷体和方正黑体
@@ -45,6 +44,11 @@
 \usepackage{fancyhdr}
 	%fancyhdr：一个很强大的宏包，用于自定义设计页面风格并命名以供调用。
 
+\usepackage{layout}
+% \setlength{\skip\footins}{1cm}%脚注与正文的距离
+% % \renewcommand{\footnotesize}{}%设置脚注字体大小
+% \renewcommand{\footrulewidth}{0.5pt}%脚注线的宽度
+\setlength\columnsep{0.8cm}%设置双栏的间距
 
 
 %%begin----------设置首页和正文不同的页眉页脚----------------%%
@@ -85,20 +89,25 @@
 
 	%%% Step3 页眉线的设置：用布尔变量区分首页和正文
 	\newcommand{\makefirstpageheadrule}{%定义首页页眉线-双线绘制命令
-		\makebox[0pt][l]{\rule[0.55\baselineskip]{\headwidth}{0.2pt}}%上0.5pt，下0.2pt
-		\rule[0.7\baselineskip]{\headwidth}{0.5pt}
+	\makebox[0pt][s]{\rule[0.6\baselineskip]{\headwidth}{0.3pt}}
+	\makebox[0pt][s]{\protect\hspace{-0.34em}\rule[0.75\baselineskip]{\headwidth}{0.3pt}}
+	\protect\vspace{-20pt}
+	%\rule[9pt]{\headwidth}{0.3pt}
+	% \rule[25pt]{\headwidth}{0.3pt}
+	%\rule[raise-height]{width}{height}
+	%其中第一个可选参数为将直线抬多高
 	}
 
 	\newcommand{\makeheadrule}{%定义正文页页眉线绘制命令，单线
-		\rule[0.7\baselineskip]{\headwidth}{0.75pt}
+	\makebox[0pt][l]{\rule[1\baselineskip]{\headwidth}{0.3pt}}
+	\protect\vspace{-20pt}%页眉和正文的距离
 	}
 
 	%根据布尔变量first为true或false分别执行不同的页眉线绘制命令
 	\renewcommand{\headrule}{%重定义headrule命令
-		\ifthenelse{\boolean{first}}{\makeheadrule}
-		{\makefirstpageheadrule}
+	\ifthenelse{\boolean{first}}{\makeheadrule}
+	{\makefirstpageheadrule}
 	}
-
 
 
 %%end--------------设置首页和正文不同的页眉页脚-----------%%
@@ -107,7 +116,7 @@
 
 %%begin-----------------参考文献-----------------------%%
 
-\usepackage{hyperref}%超链接
+\usepackage[colorlinks,linkcolor=blue,urlcolor=blue]{hyperref}%超链接
 \usepackage[hyperref=true,backend=biber,bibstyle=gb7714-2015,citestyle=numeric-comp,sorting=none,backref=true]{biblatex}
 	%hyperref=true和backref=true表示为各个参考文献的引用处、及定理、定义、例子等的引用处都添加上超链接；
 	%backend=biber：后端处理的程序为biber.exe
@@ -125,6 +134,7 @@
 
 
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%正文开始%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -133,8 +143,9 @@
 
 
 %%begin-------------------中文摘要-----------------------%%
-\title{\LARGE\textbf{实验B12 温度测控仪的设计与组装}}
-\author{\large\textit{鸭大学子}$^{1}$\\ \normalsize{（1 \textit{中山大学 物理学院，广东 广州 }510275）}}
+\title{\LARGE\textbf{实验B12 温度测控仪的设计与组装}\footnotemark[1]}
+\author{\large\textit{鸭大学子}$^{1}$\footnotemark[2]
+\\ \normalsize{（1 \textit{中山大学 物理学院，广东 广州 }510275）}}
 \date{}%不显示日期
 
 \twocolumn[
@@ -154,11 +165,15 @@
 	\end{abstract}
 	\end{@twocolumnfalse}
 ]
-
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\footnotetext[1]{由中山大学物理学院陆佑堂提供器材和指导。}
+\footnotetext[2]{通信作者，\url{xxx22@mail2.sysu.edu.cn}}
 %%end-------------------中文摘要-----------------------%%
+
 
 \thispagestyle{firstpage}%首页页面风格：firstpage
 \pagestyle{maincontent}%第二页之后的页面风格：maincontent
+
 
 %%begin----------------层级结构------------------------%%
 
@@ -170,11 +185,13 @@
 	%%section：第一级，节	，1
 在大一的实验 A4（温度传感器温度特性的测量）\cite{shenhan2015}中已经了解了多种温度传感器的特性和工作原理，本实验将在此基础上，利用温度传感器，设计并组装数字式温度计和温度控制仪。
 	%%section后面的正文：自动换段，正常缩进
-	%%PS：这里出现了引用。一般就是做个样子，在引言引一下参考文献就好了。不引用后面的参考文献打印不出来。
+	%%引用参考文献语法\cite{}，标识符shenhan2015被称为citekey，可以在book.bib文件中找到，是@后面的一串文字。论文最后的参考文献只会打印行文过程中cite的文献，而不是book.bib文件中的所有文件。
 由于这一实验的巨大成就，密立根获得了1923年的诺贝尔物理学奖。\par
-	%%自然换段：\par
+	%%自然换段：\par；相当于空一行，见下面的193行
 80多年来，显示出该实验在工业应用和科学研究中的广泛应用前景。\par
 笔者利用大学实验室常用的密立根油滴实验仪重做了密立根油滴实验，并尝试由实验结果验证电荷分布的不连续性，将在本文中详述。
+
+下面将换栏！换栏不同于换页。
 
 \newpage
 %换一栏，而不是换一页。换一页用\clearpage
@@ -214,7 +231,7 @@
 	本实验中笔者选择了“基于LM35电压型温度传感器的数显温度测控仪”电路进行搭建和测试。
 	%%自定义项目符号之（1）（2）（3）
 	\begin{enumerate}[(1)]
-		\item 根据图5搭建电路。
+		\item 根据图\ref{fig:Diagram_Cu50}搭建电路。
 		\item 测量数字电压读数与温度之间的对应关系， 作电压与温度关系曲线。
 	 	\item 利用组装的温度测控仪电路，将加热阱的温度控制在 75$^{\circ}C$。
 	\end{enumerate}
@@ -226,36 +243,36 @@
 \section{温度测控仪的搭建和测试}
 
 	\subsection{测试用设备}
-	\paragraph{A.其他设备}~
-	\newline
-	\indent 直流稳压电源用于提供测控仪电路的±12V电源，数字万用表的直流电压测量功能可用于替代数字电压表，用于指示温度测控仪的当前温度。各仪器使用方法请查阅教材。
 
 %%% 1 不跨栏单幅图
 	% 图片的大小需要细细得调。需要掌握latex里面的长度单位和限制大小方法。
+	% 图表的交叉引用：\label{}用于打标签，需要放在\caption之下。\ref{}则用于引用。
+	\paragraph{A.其他设备}~
+	\newline
+	\indent 直流稳压电源（如图\ref{fig:powersource}所示）用于提供测控仪电路的±12V电源，数字万用表的直流电压测量功能可用于替代数字电压表，用于指示温度测控仪的当前温度。各仪器使用方法请查阅教材。
 	\begin{figure}[htbp]
 		\centering
 		\includegraphics[width=0.5\textwidth]{img//device_3.png}
 			%textwidth：正文宽度。双栏，则将两栏正文宽度相加。
-		\caption{直流稳压电源}
-		\label{powersource}
+		\caption{不跨栏单幅图排版}
+		\label{fig:powersource}
 	\end{figure}
 
 %%% 2 跨栏单幅图
 	% 在figure之右加上*即可。
 	\begin{figure*}[htbp]
-	\centering
-	\includegraphics[width=1\textwidth]{img//Diagram_Cu50.png}
-	\caption{基于 PT100（或 Cu50）温度传感器的数显温度测控仪}
-	\label{Diagram_Cu50}
+		\centering
+		\includegraphics[width=1\textwidth]{img//Diagram_Cu50.png}
+		\caption{跨栏单幅图片排版}
+		\label{fig:Diagram_Cu50}
 	\end{figure*}
-
-	\paragraph{B.温度控制设备}~
-	\newline
 
 %%% 3 两幅图并行排版，各有图题，还有一个总的图题
 	% （1）注意正文中引用图片的方法
 	% （2）不仅需要调节大小，还需要细细调节位置。通过{minipage}后面的补充参数来调节位置。图片大小最好用高度来调，并保证两个图高度一样。
-	\indent 图\ref{fig:improved_subfig_a}为致冷/加热温度控制仪，从左到右分成三个部分，分别为（1）数字电压表（有20V和2V两个量程）；（2）加热和致冷功率控制器；（3）温度设置和测量装置风扇用于加快空气流动。
+	\paragraph{B.温度控制设备}~
+	\newline
+	\indent 图\ref{fig:improved_subfig_a}为致冷/加热温度控制仪，从左到右分成三个部分，分别为(1)数字电压表（有20V和2V两个量程）；(2)加热和致冷功率控制器；(3)温度设置和测量装置风扇用于加快空气流动。
 	图\ref{fig:improved_subfig_b}的控温阱分为致冷阱和加热阱两种。制冷阱用于0℃至室温范围的实验,加热阱用于室温-100℃范围。
 
 	\begin{figure*}[htbp]
@@ -274,7 +291,7 @@
 			\includegraphics[height=5cm]{img//device_2.png}
 		\end{minipage}
 		}
-		\caption{温度控制设备}
+		\caption{跨栏双图并行排版}
 	\end{figure*}
 
 \section{实验结果与讨论}
@@ -312,7 +329,7 @@
 	    80    & 748   & 768   & 758 \\
 	    \bottomrule
 	    \end{tabular}%
-	  \caption{数据记录}
+	  \caption{不跨栏表格的排版}
 	  \label{tab:addlabel}%
 	\end{table}%
 
@@ -345,7 +362,7 @@
 	    \multicolumn{2}{c}{整体情况} & 平均值：  & 1.560E-19 & 相对误差： & 2.651\% \\
 	    \bottomrule
 	    \end{tabular}%
-	 \caption{数据处理}
+	 \caption{跨栏表格的排版}
 	\end{table*}%
 
 
@@ -355,61 +372,64 @@
 %%begin------------------插入公式------------------------%%
 
 \section{结论}
-美国物理学家密立根(Robert a. Millikan)在$1909 \sim 1917$年期间所做的测量微小油滴上所带电荷的工作，即油滴实验，是物理学发展史上一个具有重要意义的实验。这一实验的设计思想简明巧妙、原理清楚、设备简单、结果准确。本实验通过重做密立根的油滴实验，通过“倒过来验证”的方法从实验上验证了电荷分布的不连续性。采用的仪器是专用的密立根油滴实验仪，操作更加方便和清晰。
-
-	1 需要标号、单个公式
-		%一般来说都需要标号
+下面是公式编辑的相关环境。
+	\paragraph*{1. equation环境}默认有标号，用于单个公式。
+		%一般来说都需要标号，不用标号只需要在环境中加上*，见下。
 		\begin{equation}
 		\eta^{\prime}=\eta /[1+b /(p a)]
 		\end{equation}
+		如果不用标号，只需在equation后面加上*，
+		\begin{equation}
+			\eta^{\prime}=\eta /[1+b /(p a)]
+		\end{equation}
+		这其实相当于直接使用$\backslash[\backslash]$进行公式编辑。
+		\[e=(1.60217733 \pm 0.00000049) \times 10^{-19} \mathrm{C}\]
 
-	2 需要标号、多个公式、不需要对齐
+	\paragraph*{2. gather环境}默认有自动标号，用于多行公式排版，没有对齐功能。
 		\begin{gather}
 		f_r=6\pi a \eta v_g   \\
 		m=4 \pi a^{3} \rho / 3
 		\end{gather}
+		如果不用标号，只需在gather后面加上*。
+		\begin{gather*}
+			f_r=6\pi a \eta v_g   \\
+			m=4 \pi a^{3} \rho / 3
+		\end{gather*}
 
-	3 需要标号、多个公式、需要对齐
+	\paragraph*{3. align环境和aligned次环境}
 		\begin{align}
 		a &= b+c+d \\
 		x &= y+z
 		\end{align}
-
-	4 不需要标号，单个公式
-		\[e=(1.60217733 \pm 0.00000049) \times 10^{-19} \mathrm{C}\]
-		另一种方法：
-		\begin{equation*}
-		e=(1.60217733 \pm 0.00000049) \times 10^{-19} \mathrm{C}
-		\end{equation*}
-
-	5 不需要标号，多个公式，不需要对齐/需要对齐
-		%使用对应的*版本
-		\begin{gather*}
-		f_r=6\pi a \eta v_g   \\
-		m=4 \pi a^{3} \rho / 3
-		\end{gather*}
-		另一种方法：
+		等价的用法是equation环境加上aligned次环境，
+		\begin{equation}
+			\begin{aligned}
+			a &= b+c+d \\
+			x &= y+z
+			\end{aligned}
+		\end{equation}
+		如果不用标号，只需在align后面加上*，
 		\begin{align*}
-		a &= b+c+d \\
-		x &= y+z
+			a &= b+c+d \\
+			x &= y+z
 		\end{align*}
+		等价的用法是equation环境加上aligned次环境，在equation后面加上*。
+		\begin{equation}
+			\begin{aligned}
+			a &= b+c+d \\
+			x &= y+z
+			\end{aligned}
+		\end{equation}
 
-	6 长公式，换行，不对齐
+	\paragraph*{4. multiline环境}可用于单条长公式排版，换行但不对齐，默认有自动标号，不标号只需加上*。
 		%不标号的话加上*
 		\begin{multline}
 		x = a+b+c+{} \\
 		d+e+f+g
 		\end{multline}
 
-	7 长公式，换行，对齐
-		%aligned：次环境
-		\[\begin{aligned}
-		x ={}&a+b+c+{} \\
-		&d+e+f+g
-		\end{aligned}\]
-
-	8 带有左边大括号的公式
-	\[\left\{
+	\paragraph*{5. 带有左边大括号的公式}
+	\[\left\{%\left和\right配合使用，可以得到大小匹配的各种括号
 		\begin{aligned}
 		&C_{1} \cdot \frac{d U_{C_{1}}}{d t}=\frac{1}{R_{1}} \cdot(u_{C_{2}}-u_{C_{1}})-f(u_{R_{N}}) \\
 		&C_{2} \cdot \frac{d U_{C_{2}}}{d t}=i_{L}-\frac{1}{R_{1}} \cdot(u_{C_{2}}-u_{C_{1}}) \\
@@ -431,13 +451,13 @@
 \begin{@twocolumnfalse}
 	\renewcommand{\abstractname} {} %不显示摘要名字
 	\begin{center}%
-	    {\LARGE\bfseries Experiment B12: The Design and Assembling of Temperature Sensor \par}%
+	    {\LARGE\bfseries Experiment B12: The Design and Assembling of Temperature Sensor\footnotemark[1]  \par}%
 	    \vskip 1.4em%
 	    {\large
 	     \lineskip .75em%
 	      \begin{tabular}[t]{c}%
 	        \large Fohong Wang$^{1}$
-	      \end{tabular}\par
+	      \end{tabular}\footnotemark[2] \par
 	      }%
 	      \vskip 0.4em%
 	    {\normalsize 1 School of Physics, Sun Yat-sen University, Guangzhou  { \rm 510275}, China}
@@ -451,6 +471,8 @@
 	\end{abstract}
 \end{@twocolumnfalse}
 ]
+\footnotetext[1]{{Supported and taught by Luyoutang, School of Physics, Sun Yat-sen University}}
+\footnotetext[2]{{Corresponding author. E-mail:\url{xxx22@mail2.sysu.edu.cn}}}
 %%end--------------------英文摘要------------------------%%
 
 \end{document}
