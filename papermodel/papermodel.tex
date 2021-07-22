@@ -16,26 +16,27 @@
 	%左右边距一样: 不考虑装订和翻页的需要.实验室网站上的示例论文格式报告就是这样。
 	\geometry{left=2cm,right=2cm,top=2.5cm,bottom=3cm}
 	%实际上,一般需要考虑到双面打印、装订和翻页的需要,需要区分奇偶页。奇偶页的页边距需要分开设置。奇数页左边距较宽，偶数页左边距较窄。
-\usepackage{xeCJK,amsmath,paralist,enumerate,booktabs,multirow,graphicx,float,subfig,setspace,listings}
+\usepackage{xeCJK,amsmath,paralist,enumerate,booktabs,multirow,graphicx,subfig,setspace,listings}
 	%xeCJK：中文字体（如楷体，作者和机构需要用到）的设置
 	%amsmath：数学公式
 	%paralist，enumerate：自定义项目符号
 	%booktabs：三线图，论文常用的表格风格
 	%multirow：复杂表格
 	%graphicx，float: 插入图片
-	%subfig：并排排版图片以及强制图表显示在“这里”[H]
+	%subfig：并排排版图片
 	%setspace：设置行间距等功能
 	\setlength{\parindent}{2em}%正文首行缩进两个汉字
 	%listings:用于排版各种代码；比如matlab的代码
 	\lstset{language=tex}
 
-\setCJKmainfont{FZShuSong-Z01S}[ItalicFont=FZKai-Z03S, BoldFont=FZHei-B01S]
+% \setCJKmainfont{FZShuSong-Z01S}[ItalicFont=FZKai-Z03S, BoldFont=FZHei-B01S]
 %中文字体设置：使用开源字体方正书宋，方正楷体和方正黑体
 
 \usepackage{titlesec}
 	%改变section、subsection里面字体的样式。中文黑体，英文TNR。
 	\newfontfamily\sectionef{Times New Roman}
-	\setCJKfamilyfont{FZHeiTi}{FZHei-B01S}
+	% \setCJKfamilyfont{FZHeiTi}{FZHei-B01S}
+	\setCJKfamilyfont{FZHeiTi}{黑体}
 	\newcommand{\sectioncf}{\CJKfamily{FZHeiTi}}
 	\titleformat*{\section}{\large\bfseries\sectioncf\sectionef}
 	\titleformat*{\subsection}{\normalsize\bfseries\sectioncf\sectionef}
@@ -186,17 +187,20 @@
 在大一的实验 A4（温度传感器温度特性的测量）\cite{shenhan2015}中已经了解了多种温度传感器的特性和工作原理，本实验将在此基础上，利用温度传感器，设计并组装数字式温度计和温度控制仪。
 	%%section后面的正文：自动换段，正常缩进
 	%%引用参考文献语法\cite{}，标识符shenhan2015被称为citekey，可以在book.bib文件中找到，是@后面的一串文字。论文最后的参考文献只会打印行文过程中cite的文献，而不是book.bib文件中的所有文件。
-由于这一实验的巨大成就，密立根获得了1923年的诺贝尔物理学奖。\par
+自然换段有两种方式, 一种是使用命令\lstinline|\par|, 另一种是常用的直接空一行即可.
 	%%自然换段：\par；相当于空一行，见下面的193行
-80多年来，显示出该实验在工业应用和科学研究中的广泛应用前景。\par
-笔者利用大学实验室常用的密立根油滴实验仪重做了密立根油滴实验，并尝试由实验结果验证电荷分布的不连续性，将在本文中详述。
+80多年来，显示出该实验在工业应用和科学研究中的广泛应用前景。笔者利用大学实验室常用的密立根油滴实验仪重做了密立根油滴实验，并尝试由实验结果验证电荷分布的不连续性，将在本文中详述。\par
+80多年来，显示出该实验在工业应用和科学研究中的广泛应用前景。笔者利用大学实验室常用的密立根油滴实验仪重做了密立根油滴实验，并尝试由实验结果验证电荷分布的不连续性，将在本文中详述。
+80多年来，显示出该实验在工业应用和科学研究中的广泛应用前景。笔者利用大学实验室常用的密立根油滴实验仪重做了密立根油滴实验，并尝试由实验结果验证电荷分布的不连续性，将在本文中详述。
 
-下面将换栏！换栏不同于换页。
+80多年来，显示出该实验在工业应用和科学研究中的广泛应用前景。笔者利用大学实验室常用的密立根油滴实验仪重做了密立根油滴实验，并尝试由实验结果验证电荷分布的不连续性，将在本文中详述。
 
+下面将换栏！换栏不同于换页。换栏我们使用命令\lstinline|\newpage|, 而换页我们用命令\lstinline|\clearpage|.
 \newpage
 %换一栏，而不是换一页。换一页用\clearpage
-\section{温度测控原理}
-温度的测控，包含温度的测量和控制，其中温度的测量往往转化为电信号输出，而温度的控制通常使用电磁继电器实现。本实验设计的温度测控仪器主要包括两个部分，一个是温度传感器，另一个是温度测控电路。
+
+\section{\LaTeX 中的层级结构}
+在论文写作中, 我们通常用到的\LaTeX 中的层级结构如下, 包括会进入pdf目录的章节结构\lstinline|\section|, \lstinline|\subsection|, \lstinline|\subsubsection|和不会进入目录的段落结构\lstinline|\paragraph|, \lstinline|\subparagraph|.
 
 	\subsection{温度测控仪电路}
 		%%subsection：第二级，小节，2.1
@@ -228,8 +232,8 @@
 
 
 	\subsection{实验内容}
-	本实验中笔者选择了“基于LM35电压型温度传感器的数显温度测控仪”电路进行搭建和测试。
-	%%自定义项目符号之（1）（2）（3）
+	下面的列表用到了自定义的项目符号之（1）（2）（3）, 更多的自定义项目符号样式可以见宏包enumerate的说明文档.
+	%%自定义项目符号之（1）（2）（3）, 更多的样式可以见宏包enumerate的说明.
 	\begin{enumerate}[(1)]
 		\item 根据图\ref{fig:Diagram_Cu50}搭建电路。
 		\item 测量数字电压读数与温度之间的对应关系， 作电压与温度关系曲线。
@@ -240,7 +244,7 @@
 
 %%begin------------------插入图表------------------------%%
 
-\section{温度测控仪的搭建和测试}
+\section{图片的插图和交叉引用}
 
 	\subsection{测试用设备}
 
@@ -267,34 +271,51 @@
 		\label{fig:Diagram_Cu50}
 	\end{figure*}
 
-%%% 3 两幅图并行排版，各有图题，还有一个总的图题
-	% （1）注意正文中引用图片的方法
+%%% 3 两幅图并行/竖向排版，各有图题，还有一个总的图题
+	% （1）两幅子图可以分别给图题, 分别引用, 注意区分子图的label和总的figure环境的label.
 	% （2）不仅需要调节大小，还需要细细调节位置。通过{minipage}后面的补充参数来调节位置。图片大小最好用高度来调，并保证两个图高度一样。
 	\paragraph{B.温度控制设备}~
 	\newline
-	\indent 图\ref{fig:improved_subfig_a}为致冷/加热温度控制仪，从左到右分成三个部分，分别为(1)数字电压表（有20V和2V两个量程）；(2)加热和致冷功率控制器；(3)温度设置和测量装置风扇用于加快空气流动。
-	图\ref{fig:improved_subfig_b}的控温阱分为致冷阱和加热阱两种。制冷阱用于0℃至室温范围的实验,加热阱用于室温-100℃范围。
+	\indent 图\ref{fig:twosubfigures_horizontal1}为致冷/加热温度控制仪，从左到右分成三个部分，分别为(1)数字电压表（有20V和2V两个量程）；(2)加热和致冷功率控制器；(3)温度设置和测量装置风扇用于加快空气流动。图\ref{fig:twosubfigures_horizontal2}的控温阱分为致冷阱和加热阱两种。制冷阱用于0℃至室温范围的实验,加热阱用于室温-100℃范围。
 
 	\begin{figure*}[htbp]
 		\centering
-		\subfloat[致冷/加热温度控制仪]{
-		\label{fig:improved_subfig_a}
-		\begin{minipage}{0.5\textwidth}
-			\centering
+		\subfloat[并行排版图片1]{\label{fig:twosubfigures_horizontal1}
 			\includegraphics[height=5cm]{img//device_1.png}
-		\end{minipage}
 		}
-		\subfloat[控温阱]{
-		\label{fig:improved_subfig_b}
-		\begin{minipage}{0.5\textwidth}
-			\centering
+		\subfloat[并行排版图片2]{\label{fig:twosubfigures_horizontal2}
 			\includegraphics[height=5cm]{img//device_2.png}
-		\end{minipage}
 		}
-		\caption{跨栏双图并行排版}
+		\caption{跨栏双图并行排版.我们这里选用了两张宽度不同的图片作为示范, 对齐的时候限制两张图片的高度为一样的即可.}
+		\label{fig:twosubfigures_horizontal}
 	\end{figure*}
 
-\section{实验结果与讨论}
+	\begin{figure*}[htbp]
+		\centering
+		\subfloat[竖向排版图片1]{\label{fig:twosubfigures_vertical1}
+			\includegraphics{img//device_1.png}
+		}
+		
+		%这里是竖向排版的关键, 在两个subfloat之间回车空一行就可以.
+		\subfloat[竖向排版图片2]{\label{fig:twosubfigures_vertical2}
+			\includegraphics{img//device_2.png}
+		}
+		\caption{跨栏双图竖向排版.这里我们取消了对两张图片高度上的限制, 让\LaTeX 自动进行调整.}
+		\label{fig:twosubfigures_vertical}
+	\end{figure*}
+
+	\begin{figure*}[htbp]
+		\centering
+		\subfloat[四图排版1]{\includegraphics{img//device_2.png}}
+		\subfloat[四图排版2]{\includegraphics{img//device_2.png}}
+
+		\subfloat[四图排版3]{\includegraphics{img//device_2.png}}
+		\subfloat[四图排版4]{\includegraphics{img//device_2.png}}
+		\caption{四幅图的$2\times 2$排版.这其实就是并行排版和竖向排版的杂交版本, 两个subfloat之间不空一行, 就会并行排版; 如果空一行, 就会竖向排版.}
+	\end{figure*}
+
+
+\section{表格的插图和交叉引用}
 
 	\subsection{数字电压读数与温度的对应关系}
 	将测控电路接入加热阱，记录温度传感器温度为$30^{\circ}C到80^{\circ}C$对应的数字电压表示数。分别记录温度上升时和温度下降时的电压值，取平均以降低误差，如表\ref{tab:addlabel}所示。
@@ -370,9 +391,9 @@
 
 
 %%begin------------------插入公式------------------------%%
-
-\section{结论}
-下面是公式编辑的相关环境。
+\clearpage
+\section{公式编辑环境}
+下面给出一些公式编辑的相关环境。
 	\paragraph*{1. equation环境}默认有标号，用于单个公式。
 		%一般来说都需要标号，不用标号只需要在环境中加上*，见下。
 		\begin{equation}
@@ -437,9 +458,10 @@
 		\end{aligned}
 	   \right.
 	\]
-
 %%end--------------------插入公式------------------------%%
 
+\section{结~~~论}
+结论是论文的最后一部分.
 \printbibliography[title=参考文献]%打印参考文献
 	%title：默认是英文的reference，用这个选参数改成中文
 

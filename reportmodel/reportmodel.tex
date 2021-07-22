@@ -13,14 +13,14 @@
 	%UTF8：中文要求
 \usepackage{geometry}%用于设置上下左右页边距
 	\geometry{left=2.5cm,right=2.5cm,top=3.2cm,bottom=2.8cm}
-\usepackage{xeCJK,amsmath,paralist,enumerate,booktabs,multirow,graphicx,float,subfigure,setspace,listings,lastpage,hyperref}
+\usepackage{xeCJK,amsmath,paralist,enumerate,booktabs,multirow,graphicx,subfig,setspace,listings,lastpage,hyperref}
 	%xeCJK：中文字体（如楷体，作者和机构需要用到）的设置
 	%amsmath：数学公式
 	%paralist，enumerate：自定义项目符号
 	%booktabs：三线图，论文常用的表格风格
 	%multirow：复杂表格
 	%graphicx，float: 插入图片
-	%subfigure：并排排版图片、竖向排版图片
+	%subfig：并排排版图片、竖向排版图片
 	%setspace：设置行间距等功能
 	\setlength{\parindent}{2em}%正文首行缩进两个汉字
 	%listings:用于排版各种代码；比如matlab的代码
@@ -38,7 +38,7 @@
 	\renewcommand{\headrulewidth}{0.4pt}
 	\renewcommand{\theenumi}{(\arabic{enumi})}
 
-\setCJKmainfont{FZShuSong-Z01S}[ItalicFont=FZKai-Z03S, BoldFont=FZHei-B01S]
+% \setCJKmainfont{FZShuSong-Z01S}[ItalicFont=FZKai-Z03S, BoldFont=FZHei-B01S]
 %中文字体设置：使用开源字体方正书宋，方正楷体和方正黑体
 
 
@@ -200,22 +200,13 @@
 	% （2）需要调节图片大小，也可以调节位置。通过{minipage}后面的补充参数来调节位置。图片大小可以用高度来调以保证两个图高度一样。
 	\begin{figure}[htbp]
 		\centering
-		\subfigure[不加$\lambda/4$波片]{\label{fig:nogamma4}
-		\begin{minipage}[t]{0.5\linewidth}%调节这里的图片位置
-		\centering
-		\includegraphics[width=0.8\textwidth]{img/3_1.png}%调节这里的图片宽度
-		%\caption{fig1}
-		\end{minipage}%
+		\subfloat[不加$\lambda/4$波片]{\label{fig:nogamma4}
+		\includegraphics[width=0.4\textwidth]{img/3_1.png}%调节这里的图片宽度
 		}%
-		\subfigure[加$\lambda/4$波片]{\label{fig:withgamma4}
-		\begin{minipage}[t]{0.5\linewidth}%调节这里的图片位置
-		\centering
-		\includegraphics[width=0.8\textwidth]{img/3_2.png}%调节这里的图片宽度
-		%\caption{fig2}
-		\end{minipage}%
+		\subfloat[加$\lambda/4$波片]{\label{fig:withgamma4}
+		\includegraphics[width=0.4\textwidth]{img/3_2.png}%调节这里的图片宽度
 		}%
-		\centering
-		\caption{泡克耳斯盒的调制特性}
+		\caption{两幅图并行排版，各有图题，还有一个总的图题}
 		\label{fig:tcvi}
 	\end{figure}
 
@@ -223,22 +214,25 @@
 	% 和横向并行排版相比，关键是在两个subfigure之间空了一行！
 	\begin{figure}
 		\centering
-		\subfigure[纵向调制]{
-		\begin{minipage}[b]{0.5\textwidth}%调节这里的图片位置
-			\centering
-			\includegraphics[width=1\textwidth]{img/v.png}%调节这里的图片宽度
-		\end{minipage}
+		\subfloat[纵向调制]{
+			\includegraphics[width=0.6\textwidth]{img/v.png}%调节这里的图片宽度
 		}
 
-		\subfigure[横向调制]{
-		\begin{minipage}[b]{0.5\textwidth}%调节这里的图片位置
-			\centering
-			\includegraphics[width=1\textwidth]{img/h.png}%调节这里的图片宽度
-		\end{minipage}
+		\subfloat[横向调制]{
+			\includegraphics[width=0.6\textwidth]{img/h.png}%调节这里的图片宽度
 		}
-		\caption{泡克尔斯盒} \label{fig:pkkeorsihe}
+		\caption{两幅图竖向排版，各有图题，还有一个总的图题} \label{fig:pkkeorsihe}
 	\end{figure}
+%% 四幅图的2×2排版
+	\begin{figure*}[htbp]
+		\centering
+		\subfloat[四图排版1]{\includegraphics[width=0.4\textwidth]{img//3_1.png}}
+		\subfloat[四图排版2]{\includegraphics[width=0.4\textwidth]{img//3_1.png}}
 
+		\subfloat[四图排版3]{\includegraphics[width=0.4\textwidth]{img//3_1.png}}
+		\subfloat[四图排版4]{\includegraphics[width=0.4\textwidth]{img//3_1.png}}
+		\caption{四幅图的$2\times 2$排版.这其实就是并行排版和竖向排版的杂交版本, 两个subfloat之间不空一行, 就会并行排版; 如果空一行, 就会竖向排版.}
+	\end{figure*}
 %% 三幅图并行排版, 各有图题, 没有总图题
 	%重点：关键是给三幅图设定宽度，比如说如果希望三幅图占据等量的宽度，就可以调整每个minipage的宽度为0.3的\textwidth
 	\begin{figure}[htbp]
